@@ -24,22 +24,51 @@ class MyHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("ปฏิบัติการบทที่ 5 - Layouts"),
-        backgroundColor: Colors.teal,
+        title: const Text('ปฏิบัติการบทที่ 5 - Layouts'), // อัปเดต title
+        backgroundColor: const Color.fromARGB(
+          255,
+          5,
+          234,
+          85,
+        ), // เปลี่ยนสีตามต้องการ
       ),
       body: Padding(
         // คง Padding ไว้สำหรับระยะห่างโดยรวม
         padding: EdgeInsets.all(16.0),
+
+        // ภายในวิดเจ็ต Padding ของ body
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.center,
+          // คอลัมน์หลักสำหรับหน้า
           children: <Widget>[
-            Container(color: Colors.red, width: 50, height: 50),
-            Container(color: Colors.green, width: 100, height: 50),
-            Container(color: Colors.blue, width: 75, height: 50),
+            Container(
+              // container การ์ด
+              margin: const EdgeInsets.all(10.0),
+              padding: const EdgeInsets.all(16.0),
+              decoration: BoxDecoration(
+                color: Colors.grey.shade200,
+                borderRadius: BorderRadius.circular(8.0),
+              ),
+              child: Row(
+                children: <Widget>[
+                  Icon(Icons.account_circle, size: 50),
+                  SizedBox(width: 16.0),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget>[
+                      Text(
+                        'โปรไฟล์ผู้ใช้',
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                      ),
+                      SizedBox(height: 8.0),
+                      Text('แก้ไขรายละเอียดโปรไฟล์ของคุณที่นี่'),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+            // เพิ่มการ์ดหรือวิดเจ็ตอื่นๆ ทีหลังหากต้องการ
           ],
         ),
-
         // Placeholder
       ),
     );
