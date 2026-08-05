@@ -27,9 +27,9 @@ class MyHomePage extends StatelessWidget {
         title: const Text('ปฏิบัติการบทที่ 5 - Layouts'), // อัปเดต title
         backgroundColor: const Color.fromARGB(
           255,
-          5,
-          234,
-          85,
+          9,
+          237,
+          89,
         ), // เปลี่ยนสีตามต้องการ
       ),
       body: Padding(
