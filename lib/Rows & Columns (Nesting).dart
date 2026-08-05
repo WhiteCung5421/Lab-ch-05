@@ -25,18 +25,11 @@ class MyHomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('ปฏิบัติการบทที่ 5 - Layouts'), // อัปเดต title
-        backgroundColor: const Color.fromARGB(
-          255,
-          9,
-          237,
-          89,
-        ), // เปลี่ยนสีตามต้องการ
+        backgroundColor: Colors.indigo, // เปลี่ยนสีตามต้องการ
       ),
       body: Padding(
         // คง Padding ไว้สำหรับระยะห่างโดยรวม
         padding: EdgeInsets.all(16.0),
-
-        // ภายในวิดเจ็ต Padding ของ body
         child: Column(
           // คอลัมน์หลักสำหรับหน้า
           children: <Widget>[
@@ -49,28 +42,42 @@ class MyHomePage extends StatelessWidget {
                 borderRadius: BorderRadius.circular(8.0),
               ),
               child: Row(
+                // Row สำหรับ Icon และ Text Column
                 children: <Widget>[
-                  Icon(Icons.account_circle, size: 50),
-                  SizedBox(width: 16.0),
+                  const Icon(
+                    Icons.account_circle,
+                    size: 50,
+                    color: Colors.indigo,
+                  ),
+                  const SizedBox(width: 16), // เว้นวรรคระหว่างไอคอนและข้อความ
                   Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget>[
+                    // Column สำหรับรายละเอียดข้อความ
+                    crossAxisAlignment:
+                        CrossAxisAlignment.start, // จัดข้อความชิดซ้าย
+                    mainAxisSize:
+                        MainAxisSize.min, // ป้องกันไม่ให้ column ใช้ความสูงเต็ม
+                    children: const <Widget>[
                       Text(
                         'โปรไฟล์ผู้ใช้',
-                        style: TextStyle(fontWeight: FontWeight.bold),
+                        style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
-                      SizedBox(height: 8.0),
+                      SizedBox(
+                        height: 4,
+                      ), // เว้นวรรคระหว่าง title และ description
                       Text('แก้ไขรายละเอียดโปรไฟล์ของคุณที่นี่'),
                     ],
                   ),
                 ],
               ),
+              // Placeholder
             ),
             // เพิ่มการ์ดหรือวิดเจ็ตอื่นๆ ทีหลังหากต้องการ
           ],
         ),
-        // Placeholder
       ),
     );
   }
-} //hi
+}
